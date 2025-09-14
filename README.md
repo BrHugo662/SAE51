@@ -32,3 +32,7 @@ Nous avons ensuite continuer nos programes en rajoutant la vérification de l'é
 Nous avons ensuite passer a l'étape 4 qui conste a donner un argument permet de crée, supprimer, démarrer, arréter ou afficher les machinne virtuelle existante.
 Pour réponde a l'étape nous avons décider d'utiliser 'goto' plutot que ce que nous avons vue en cours avec les 'if' et 'fi' car nous avons l'impresion que 'goto' est plus adapter a la demande.
 Durant nos multiple tets sur l'étape 4 nous avons du crée plusieur machine virtuelle ce qui nous a donner l'idée de creé une nouvelle argument que ce qui nous a été demander, nous avons décider de rajouter l'argument T qui permet de suprimer toutes les machine virtuelle que nous avons crée. Nous avons ensuite modifier notre code pour réaliser les étape suivantes.
+
+## (Nom a redéfinir)
+
+Pour faire fonctionner notre code il faut ourire un terminal linux et commencer par écrire genMV.sh puis écrire l'argument qui correspond a ce que l'on veut faire: '-L' pour voir les machine virtuelle qui existe, '-N' pour crée une machine virtuelle, '-S' pour suprimer une machine virtuelle et mettre le nom de la machine a supprimer, '-D' pour démarer une machine virtuelle et le nom de la machine que l'on veux démarer, '-A' pour arréter une machine virtuelle et le nom de la machine que l'on veux arréter et comme nous l'avons écrit plutot nous avons rajouter l'argument '-T' qui permet de suprimer tout les machine virtuelles que nous avons crée.
