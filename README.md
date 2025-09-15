@@ -46,13 +46,13 @@ Nous avons ensuite modifié notre code pour implémenter les étapes suivantes d
 Pour utiliser notre script, il faut ouvrir un terminal Linux et exécuter :  
 
 ```bash
-./genMV.sh [argument] [nom_de_machine]'''
-
+./genMV.sh [argument] [nom_de_la_machine_virtuelle]
+```
 Liste des arguments:
 
 - `-L` : afficher la liste des machines virtuelles existantes.  
 - `-N` : créer une nouvelle machine virtuelle.  
-- `-S [nom]` : supprimer la machine virtuelle indiquée.  
-- `-D [nom]` : démarrer la machine virtuelle indiquée.  
-- `-A [nom]` : arrêter la machine virtuelle indiquée.  
+- `-S` : supprimer la machine virtuelle indiquée.  
+- `-D` : démarrer la machine virtuelle indiquée.  
+- `-A` : arrêter la machine virtuelle indiquée.  
 - `-T` : supprimer toutes les machines virtuelles créées.
