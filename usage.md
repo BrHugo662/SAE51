@@ -34,7 +34,7 @@ Une fois réglé, nous avons pu vérifier que notre programme créait bien une m
 Nous avons ensuite ajouté une vérification permettant de supprimer une machine virtuelle si elle existait déjà, comme demandé dans l’étape 2.  
 
 Pour l’étape 4, il fallait donner un argument pour créer, supprimer, démarrer, arrêter ou afficher les machines virtuelles existantes.  
-Nous avons choisi d’utiliser une structure avec `getopts` plutôt que des simples `if`/`fi`, car cela nous semblait plus adapté à la demande.  
+Nous avons choisi d’utiliser une structure avec `getopts` plutôt que d'utiliser `if`/`fi`, car cela nous semblait plus adapté à la demande.  
 
 Au cours de nos tests, nous avons dû créer plusieurs machines virtuelles. Cela nous a donné l’idée d’ajouter une fonctionnalité supplémentaire : l’argument `-T`, qui permet de supprimer toutes les machines virtuelles créées.  
 Nous avons ensuite modifié notre code pour implémenter les étapes suivantes du projet.  
@@ -56,3 +56,22 @@ Liste des arguments:
 - `-D` : démarrer la machine virtuelle indiquée.  
 - `-A` : arrêter la machine virtuelle indiquée.  
 - `-T` : supprimer toutes les machines virtuelles créées.
+
+---
+
+## Explication de 'getopts'
+
+Nous avons choisi d’utiliser `getopts` pour gérer les arguments passés en ligne de commande.  
+C’est une commande intégrée au shell qui permet de lire facilement les options (`-N`, `-S`, etc.) sans avoir à écrire plusieurs conditions `if/fi`.  
+Avec `getopts`, chaque option est récupérée automatiquement et stockée dans une variable (`opt`), et si l’option attend un autre argument (par exemple le nom d’une VM pour `-S`), celui-ci est placé dans la variable spéciale `$OPTARG`.  
+Cela rend le script plus clair et plus court.  
+
+Exemple:
+```bash
+while getopts "NS:" opt; do
+  case $opt in
+    N) echo "Créer une VM" ;;
+    S) echo "Supprimer la VM nommée : $OPTARG" ;;
+  esac
+done
+
