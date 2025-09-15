@@ -7,7 +7,7 @@
 
 ## Résumé
 
-Ce document présente le travail réalisé autour du script `vm.py` et du script `genMV.sh` permettant la gestion de machines virtuelles sous Linux. Il décrit l’organisation de notre projet, les étapes de développement, les difficultés rencontrées, ainsi que les fonctionnalités finales implémentées. Enfin, un guide d’utilisation explique comment exécuter et tester le code.  
+Ce document présente le travail réalisé autour du script `genMV.sh` permettant la gestion de machines virtuelles sous Linux. Il décrit l’organisation de notre projet, les étapes de développement, les difficultés rencontrées, ainsi que les fonctionnalités finales implémentées. Enfin, un guide d’utilisation explique comment exécuter et tester le code.  
 
 ---
 
