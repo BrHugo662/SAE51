@@ -1,38 +1,50 @@
 # Guide d’utilisation du script `vm.py`
 
-**Auteurs :** SIMAO Julien et BREANT Hugo
-**Date :** 11/09/2025
+**Auteurs :** SIMAO Julien et BREANT Hugo  
+**Date :** Du 05/09/2025 au 15/09/2025  
 
 ---
 
 ## Résumé
-Ce document explique comment nous avons travailler. 
-Il présente les fonctionnalités disponibles, ainsi que les problèmes rencontrés lors du développement. 
-Ce guide servira de référence pour comprendre l’usage du programme et les améliorations possibles. 
+
+Ce document présente le travail réalisé autour du script `vm.py` et du script `genMV.sh` permettant la gestion de machines virtuelles sous Linux. Il décrit l’organisation de notre projet, les étapes de développement, les difficultés rencontrées, ainsi que les fonctionnalités finales implémentées. Enfin, un guide d’utilisation explique comment exécuter et tester le code.  
 
 ---
 
-## (Nom a redéfinir)
+## Organisation du projet
 
-Nous avons tout dabor commencer par installer nos machine virtuelle sur nos machine personnelle, nous avons ensuite creé nos deux projets sur GitHub pour pouvoir par la suite reconnecter nos deux programme.
-nous avons ensuite lu le sujet pour pourvoir ensuite réfléchire comment s'organiser, c'est a dire qui fait quoi, qui code quoi.
-Puis nous avons installer les différente extension de logiciel comme git.
+Nous avons d’abord commencé par installer nos machines virtuelles sur nos ordinateurs personnels.  
+Ensuite, nous avons créé deux projets sur GitHub afin de synchroniser nos programmes et travailler en collaboration.  
+Après la lecture du sujet, nous avons défini une organisation claire : répartition des tâches, qui code quoi, et quelles extensions logicielles installer (comme `git`).  
 
+---
 
-## (Nom a redéfinir)
+## Recherche et premières étapes
 
-Nous avons ensuite commencer chaquun de notre coté commancer a cherche des commande qui pouvait nous aider pour la réalisation de notre projet et nous les avons ensuite tester pour comprendre commant elles fonctionner, ce qu'elle fesait  et quelle argument sont a donner.
-Aprés avoir plus ou moins comprit les commande nous avons commancer par faire l'étape 1 qui consiter a crée une machine virtuel debian 64bits, avce des condition particulière.
-Lors de cette étape nous avons rencontre un problème qui bloquer l'ouverture de la machine virtuelle dans nos machien virtuelle, nous avons réutie a réger le problème en cochant un élément dans notre ligicielle de vitualisation sur nos machine réel. Nous avons dû aussi autoriser la virtualisation imbriquée sur nos ordinateur personnel. Suite a cela nous avons piu vérifier que nos programmes crée bien une machinne viruelle que nous pouvons ouvrire.
+Chacun de notre côté, nous avons cherché des commandes utiles à la réalisation du projet et nous les avons testées pour bien comprendre leur fonctionnement et leurs arguments.  
+Nous avons ensuite attaqué l’étape 1 : la création d’une machine virtuelle Debian 64 bits avec des conditions particulières.  
 
+Lors de cette étape, un problème bloquait l’ouverture de la machine virtuelle dans nos VM. Nous avons résolu cela en cochant une option dans notre logiciel de virtualisation sur nos machines réelles. Il a aussi fallu autoriser la virtualisation imbriquée sur nos ordinateurs personnels.  
+Une fois réglé, nous avons pu vérifier que notre programme créait bien une machine virtuelle utilisable.  
 
-## (Nom a redéfinir)
+---
 
-Nous avons ensuite continuer nos programes en rajoutant la vérification de l'éxistance d'une machine qui exite déja et ci c'est la cas supprimer l'auciéne machine virtuelle comme demander dans l'étape 2.
-Nous avons ensuite passer a l'étape 4 qui conste a donner un argument permet de crée, supprimer, démarrer, arréter ou afficher les machinne virtuelle existante.
-Pour réponde a l'étape nous avons décider d'utiliser 'goto' plutot que ce que nous avons vue en cours avec les 'if' et 'fi' car nous avons l'impresion que 'goto' est plus adapter a la demande.
-Durant nos multiple tets sur l'étape 4 nous avons du crée plusieur machine virtuelle ce qui nous a donner l'idée de creé une nouvelle argument que ce qui nous a été demander, nous avons décider de rajouter l'argument T qui permet de suprimer toutes les machine virtuelle que nous avons crée. Nous avons ensuite modifier notre code pour réaliser les étape suivantes.
+## Développement des fonctionnalités
 
-## (Nom a redéfinir)
+Nous avons ensuite ajouté une vérification permettant de supprimer une machine virtuelle si elle existait déjà, comme demandé dans l’étape 2.  
 
-Pour faire fonctionner notre code il faut ourire un terminal linux et commencer par écrire genMV.sh puis écrire l'argument qui correspond a ce que l'on veut faire: '-L' pour voir les machine virtuelle qui existe, '-N' pour crée une machine virtuelle, '-S' pour suprimer une machine virtuelle et mettre le nom de la machine a supprimer, '-D' pour démarer une machine virtuelle et le nom de la machine que l'on veux démarer, '-A' pour arréter une machine virtuelle et le nom de la machine que l'on veux arréter et comme nous l'avons écrit plutot nous avons rajouter l'argument '-T' qui permet de suprimer tout les machine virtuelles que nous avons crée.
+Pour l’étape 4, il fallait donner un argument pour créer, supprimer, démarrer, arrêter ou afficher les machines virtuelles existantes.  
+Nous avons choisi d’utiliser une structure avec `getopts` plutôt que des simples `if`/`fi`, car cela nous semblait plus adapté à la demande.  
+
+Au cours de nos tests, nous avons dû créer plusieurs machines virtuelles. Cela nous a donné l’idée d’ajouter une fonctionnalité supplémentaire : l’argument `-T`, qui permet de supprimer toutes les machines virtuelles créées.  
+Nous avons ensuite modifié notre code pour implémenter les étapes suivantes du projet.  
+
+---
+
+## Guide d’utilisation
+
+Pour utiliser notre script, il faut ouvrir un terminal Linux et exécuter :  
+
+```bash
+./genMV.sh [argument] [nom_de_machine]
+
