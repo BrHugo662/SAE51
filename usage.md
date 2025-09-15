@@ -59,14 +59,15 @@ Liste des arguments:
 
 ---
 
-## Explication de 'getopts'
+## Explication de `getopts`
 
 Nous avons choisi d’utiliser `getopts` pour gérer les arguments passés en ligne de commande.  
 C’est une commande intégrée au shell qui permet de lire facilement les options (`-N`, `-S`, etc.) sans avoir à écrire plusieurs conditions `if/fi`.  
-Avec `getopts`, chaque option est récupérée automatiquement et stockée dans une variable (`opt`), et si l’option attend un autre argument (par exemple le nom d’une VM pour `-S`), celui-ci est placé dans la variable spéciale `$OPTARG`.  
-Cela rend le script plus clair et plus court.  
+Avec `getopts`, chaque option est récupérée automatiquement et stockée dans une variable (`opt`). Si l’option attend un argument supplémentaire (par exemple le nom d’une VM pour `-S`), celui-ci est placé dans la variable spéciale `$OPTARG`.  
+Cela rend le script plus clair, plus concis et plus facile à maintenir.  
 
 Exemple:
+
 ```bash
 while getopts "NS:" opt; do
   case $opt in
@@ -74,4 +75,5 @@ while getopts "NS:" opt; do
     S) echo "Supprimer la VM nommée : $OPTARG" ;;
   esac
 done
+
 
